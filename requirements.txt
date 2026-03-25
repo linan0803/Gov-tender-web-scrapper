@@ -3,5 +3,6 @@ beautifulsoup4
 smtplib
 MIMEMultipart
 MIMEText
-Charset, QP
+Charset
+QP
 load_dotenv
