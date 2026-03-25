@@ -9,8 +9,8 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     env:
-      OUTLOOK_EMAIL: ${{ secrets.OUTLOOK_EMAIL }}
-      OUTLOOK_PASSWORD: ${{ vars.OUTLOOK_PASSWORD }}
+      OUTLOOK_EMAIL: ${{ vars.OUTLOOK_EMAIL }}
+      OUTLOOK_PASSWORD: ${{ secrets.OUTLOOK_PASSWORD }}
       TO_EMAIL: ${{ vars.TO_EMAIL }}
 
     steps:
