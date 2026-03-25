@@ -14,7 +14,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'  # 指定 Python 版本
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
@@ -22,4 +22,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run your script
-      run: python your_script.py
+      run: python scrapper.py
