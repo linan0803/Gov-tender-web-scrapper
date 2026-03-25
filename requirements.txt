@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+smtplib
+MIMEMultipart
+MIMEText
+Charset, QP
+load_dotenv
