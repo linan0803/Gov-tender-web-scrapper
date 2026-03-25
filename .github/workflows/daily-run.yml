@@ -2,7 +2,7 @@ name: Daily Run
 
 on:
   schedule:
-    - cron: "0 14 * * *"  # 每天 UTC 9:00 (台灣約 17:00)
+    - cron: "6 14 * * *"  # 每天 UTC 9:00 (台灣約 17:00)
 
 jobs:
   run-script:
