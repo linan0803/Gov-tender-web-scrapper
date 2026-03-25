@@ -17,8 +17,8 @@ URL = "https://web.pcc.gov.tw/prkms/tender/common/basic/readTenderBasic?pageSize
 # =========================================
 load_dotenv()
 
-SMTP_SERVER = os.getenv("SMTP_SERVER")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
+SMTP_SERVER = "smtp.office365.com"
+SMTP_PORT = 587
 OUTLOOK_EMAIL = os.getenv("OUTLOOK_EMAIL")
 OUTLOOK_PASSWORD = os.getenv("OUTLOOK_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")
