@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OUTLOOK_EMAIL: ${{ secrets.OUTLOOK_EMAIL }}
-      OUTLOOK_PASSWORD: ${{ secrets.OUTLOOK_PASSWORD }}
-      TO_EMAIL: ${{ secrets.TO_EMAIL }}
+      OUTLOOK_PASSWORD: ${{ vars.OUTLOOK_PASSWORD }}
+      TO_EMAIL: ${{ vars.TO_EMAIL }}
 
     steps:
     - uses: actions/checkout@v3
