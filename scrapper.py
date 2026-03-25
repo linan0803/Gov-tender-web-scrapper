@@ -23,8 +23,8 @@ OUTLOOK_EMAIL = os.getenv("OUTLOOK_EMAIL")
 OUTLOOK_PASSWORD = os.getenv("OUTLOOK_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")
 
-print("OUTLOOK_EMAIL:", OUTLOOK_EMAIL)
-print("TO_EMAIL:", TO_EMAIL)
+print("Email:", OUTLOOK_EMAIL)
+print("Password length:", len(OUTLOOK_PASSWORD) if OUTLOOK_PASSWORD else "None or empty")
 
 # =========================================
 # 3. 建立 session 抓 HTML（確保抓到結果，不是查詢頁）
