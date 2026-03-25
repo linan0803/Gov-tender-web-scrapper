@@ -23,10 +23,6 @@ OUTLOOK_EMAIL = os.getenv("OUTLOOK_EMAIL")
 OUTLOOK_PASSWORD = os.getenv("OUTLOOK_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")
 
-print('SMTP_SERVER:', SMTP_SERVER)
-print('SMTP_PORT:', SMTP_PORT, type(SMTP_PORT))
-
-
 # =========================================
 # 3. 建立 session 抓 HTML（確保抓到結果，不是查詢頁）
 # =========================================
@@ -73,11 +69,6 @@ def extract_table_html(html):
                 m = re.search(r'Geps3\.CNS\.pageCode2Img\("(.+?)"\)', span.script.string)
                 if m:
                     case_name = m.group(1)
-            # if not case_name:
-                # fallback: 用 title 或其他方式
-                # title = a.get("title", "")
-                # if "標案名稱:" in title:
-                #     case_name = title.split("標案名稱:")[-1].strip()
             if not case_name:
                 continue
 
@@ -140,10 +131,10 @@ def send_email(html_table):
 
     msg.attach(MIMEText(html_body, "html", "utf-8"))
 
-    # with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-    #     server.starttls()
-    #     server.login(OUTLOOK_EMAIL, OUTLOOK_PASSWORD)
-    #     server.sendmail(OUTLOOK_EMAIL, TO_EMAIL, msg.as_string())
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+        server.starttls()
+        server.login(OUTLOOK_EMAIL, OUTLOOK_PASSWORD)
+        server.sendmail(OUTLOOK_EMAIL, TO_EMAIL, msg.as_string())
 
     print("📧【成功寄出】！")
 
