@@ -1,8 +1,9 @@
 name: Daily Run
 
 on:
-  schedule:
-    - cron: "6 14 * * *"  # 每天 UTC 9:00 (台灣約 17:00)
+  workflow_dispatch:
+  # schedule:
+    # - cron: "6 14 * * *"
 
 jobs:
   run-script:
