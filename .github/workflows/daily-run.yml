@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-script:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       OUTLOOK_EMAIL: ${{ vars.OUTLOOK_EMAIL }}
       OUTLOOK_PASSWORD: ${{ secrets.OUTLOOK_PASSWORD }}
@@ -16,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+    # - name: Set up Python
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '3.11'
 
     - name: Install dependencies
       run: |
