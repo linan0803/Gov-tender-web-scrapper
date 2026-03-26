@@ -53,9 +53,22 @@ def extract_table_html(html):
     # 1) 移除排序連結 (?開頭)
     # ------------------------------
     for a in table.find_all("a"):
-        href = a.get("href", "").strip()
+        href = a["href"].strip()
+
         if href.startswith("?"):
             a.unwrap()
+            continue
+
+        # if not "/tpam?pk=" in href:
+        #     # 組完整 URL
+        #     full_url = "https://web.pcc.gov.tw" + href
+
+        #     # 建立新的 <a>
+        #     new_a = soup.new_tag("a", href=full_url)
+        #     new_a.string = a.get_text(strip=True)
+
+        #     # 替換舊的 <a>
+        #     a.replace_with(new_a)
 
     # ------------------------------
     # 2) 找出所有真正的標案連結："/tpam?pk="
@@ -72,6 +85,8 @@ def extract_table_html(html):
                 m = re.search(r'Geps3\.CNS\.pageCode2Img\("(.+?)"\)', span.script.string)
                 if m:
                     case_name = m.group(1)
+            if not case_name:
+                case_name = a.get_text(strip=True)
             if not case_name:
                 continue
 
@@ -139,7 +154,7 @@ def send_email(html_table):
         server.login(OUTLOOK_EMAIL, OUTLOOK_PASSWORD)
         server.sendmail(OUTLOOK_EMAIL, TO_EMAIL, msg.as_string())
 
-    print("📧【成功寄出】！")
+    print("send email success")
 
 
 # =========================================
