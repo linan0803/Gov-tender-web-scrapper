@@ -33,8 +33,8 @@ def fetch_html():
     session = requests.Session()
     headers = {"User-Agent": "Mozilla/5.0", "Referer": URL}
 
-    session.get(URL, headers=headers)  # 建立 session
-    r = session.get(URL, headers=headers)
+    session.get(URL, headers=headers,  verify=False)  # 建立 session
+    r = session.get(URL, headers=headers,  verify=False)
     r.raise_for_status()
     return r.text
 
