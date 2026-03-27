@@ -1,9 +1,9 @@
 name: Daily Run
 
 on:
-  workflow_dispatch:
-  # schedule:
-    # - cron: "6 14 * * *"
+  # workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
 
 jobs:
   run-script:
