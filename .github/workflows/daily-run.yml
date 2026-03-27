@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-script:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       OUTLOOK_EMAIL: ${{ vars.OUTLOOK_EMAIL }}
       OUTLOOK_PASSWORD: ${{ secrets.OUTLOOK_PASSWORD }}
