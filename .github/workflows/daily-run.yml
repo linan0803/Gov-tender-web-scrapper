@@ -3,7 +3,7 @@ name: Daily Run
 on:
   workflow_dispatch:
   schedule:
-    - cron: "56 3 * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   run-script:
