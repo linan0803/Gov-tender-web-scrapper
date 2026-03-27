@@ -17,7 +17,7 @@ URL = "https://web.pcc.gov.tw/prkms/tender/common/basic/readTenderBasic?pageSize
 # =========================================
 load_dotenv()
 
-SMTP_SERVER = "smtp.google.com"
+SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 OUTLOOK_EMAIL = os.getenv("OUTLOOK_EMAIL")
 OUTLOOK_PASSWORD = os.getenv("OUTLOOK_PASSWORD")
